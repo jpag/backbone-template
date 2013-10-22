@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'build.sh' ]
+2 info using npm@1.1.64
+3 info using node@v0.9.4-pre
+4 verbose read json /_WORK/apppreview/build/scripts/package.json
+5 error Error: ENOENT, open '/_WORK/apppreview/build/scripts/package.json'
+6 error If you need help, you may report this log at:
+6 error     <http://github.com/isaacs/npm/issues>
+6 error or email it to:
+6 error     <npm-@googlegroups.com>
+7 error System Darwin 12.3.0
+8 error command "/usr/local/bin/node" "/usr/local/bin/npm" "run" "build.sh"
+9 error cwd /_WORK/apppreview/build/scripts
+10 error node -v v0.9.4-pre
+11 error npm -v 1.1.64
+12 error path /_WORK/apppreview/build/scripts/package.json
+13 error code ENOENT
+14 error errno 34
+15 verbose exit [ 34, true ]

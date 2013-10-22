@@ -1,0 +1,20 @@
+#php_flag log_errors on
+#php_flag display_errors on
+
+#CUSTOM URL:
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?x=$1
+RewriteRule ^([a-zA-Z0-9]+)/$ index.php?x=$1
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?x=$1&y=$2
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/$ index.php?x=$1&y=$2
+
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([^+]+)/$ index.php?x=$1&y=$2&ldmsg=$3
+#RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([^/]+)/$ index.php?x=$1&y=$2&ldmsg=$3
+
+
+#original working
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?x=$1&y=$2&ldmsg=$3
+#RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/$ index.php?x=$1&y=$2&ldmsg=$3
