@@ -355,7 +355,7 @@ body {
   position: absolute;
   margin: 0 auto;
   font-family: Arial, Tahoma, sans-serif;
-  background: #FFF;
+  background: #eee;
   overflow-x: hidden;
 }
 .btn,
@@ -381,7 +381,7 @@ li {
 #siteloader-wrapper #siteloader {
   position: relative;
   margin: auto;
-  width: 45px;
+  width: 35px;
 }
 .downloadApp {
   background-image: url("../images/icons/Download_on_the_App_Store_Badge_US-UK_135x40.png");
