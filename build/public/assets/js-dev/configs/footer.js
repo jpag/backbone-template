@@ -3,20 +3,20 @@ define([], function() {
   var config = { 
 
   	links:[
-  		{name: "Thomsonreuters.com" , link: "http://www.thomsonreuters.com" },
-  		{name: "Privacy Policy" , link: "http://www.reuters.com/privacy-policy" },
-  		{name: "Terms of Use" , link: "http://www.reuters.com/terms-of-use" },
-  		{name: "Copyright" , link: "http://thomsonreuters.com/copyright" },
-  		{name: "Contact Us" , link: "https://reuters.zendesk.com" },
-  		{name: "Corrections" , link: "https://reuters.zendesk.com/anonymous_requests/new" },
-  		{name: "Site Index" , link: "ttp://www.reuters.com/assets/siteindex" }
+  		{name: "Home" , link: "#" },
+  		{name: "Privacy Policy" , link: "#" },
+  		{name: "Terms of Use" , link: "#" },
+  		{name: "Copyright" , link: "#" },
+  		{name: "Contact Us" , link: "#" },
+  		{name: "Corrections" , link: "#" },
+  		{name: "Site Index" , link: "#" }
   	],
 
   	followBtns:[
-		{link:"https://twitter.com/Reuters" , classname: "twitter" },
-		{link:"https://www.facebook.com/Reuters" , classname: "facebook" },
-		{link:"http://www.linkedin.com/today/reuters.com" , classname: "linkedin" },
-		{link:"http://www.youtube.com/reuters" , classname: "youtube" }
+		{link:"https://twitter.com/#" , classname: "twitter" },
+		{link:"https://www.facebook.com/#" , classname: "facebook" },
+		{link:"http://www.linkedin.com/#" , classname: "linkedin" },
+		{link:"http://www.youtube.com/#" , classname: "youtube" }
   	]
 
   };
