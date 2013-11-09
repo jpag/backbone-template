@@ -7,16 +7,12 @@ define([
     'jQuery',
     'Underscore',
     'Backbone',
-    'views/RealTimeView',
-    'views/ContextView',
-    'views/ExploreView'
+    'views/contentExample'
 ], function(
     $,
     _,
     Backbone,
-    RealTimeView,
-    ContextView,
-    ExploreView
+    ContentExample
 ) {
 
     "use strict";
@@ -38,7 +34,6 @@ define([
                 EventAggregator : this.options.EventAggregator
             });
 
-
             this.render();
         },
 
@@ -46,46 +41,47 @@ define([
          * Build our subviews from our DOM elements
          */
         render : function () {
-            var subViews,
-                viewType,
-                viewMethod;
-
             Debug.trace(' RENDER - SITE COMPOSITE');
+                
+            // this.loadComposites();
+            this.displayContentView();
 
-            subViews = this.$el.find('.section');
-
-            _.each(subViews, function(el) {
-                viewType = $(el).data('type');
-                viewMethod = 'create' + viewType + 'View';
-                this[viewMethod](el);
-            }, this);
-
-          return this;
+            return this;
         },
 
+        displayContentView : function (){
+            var contentExample = new ContentExample({
+                EventAggregator: this.EventAggregator
+            });
+            
+            this.$el.append( contentExample.el );
+
+        },
+        
+        // Dynamic way of requiring each view independently.
+        // TODO: does not work well with the optimizer build script yet.
         loadComposites : function () {
-          
+            // this.createAndAppendView('views/XXXX');
+
         },
 
-        createcontextView : function (el) {
-            var contextView = new ContextView({
-                el : el,
-                EventAggregator: this.EventAggregator
-            });
-        },
-
-        createexploreView : function (el) {
-            var exploreView = new ExploreView({
-                el : el,
-                EventAggregator: this.EventAggregator
-            });
-        },
-
-        createrealTimeView : function (el) {
-            var realTimeView = new RealTimeView({
-                el : el
+        createAndAppendView : function (viewPath) {
+            var el = this.el,
+                EventAggregator = this.EventAggregator;
+                
+            require([
+                viewPath
+            ], function( 
+                View
+                ){
+                
+                var view = new View({
+                    el: el,
+                    EventAggregator: EventAggregator
+                });
             });
         }
+
 
       });
 });

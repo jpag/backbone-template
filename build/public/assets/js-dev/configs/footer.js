@@ -4,11 +4,7 @@ define([], function() {
 
   	links:[
   		{name: "Home" , link: "#" },
-  		{name: "Privacy Policy" , link: "#" },
-  		{name: "Terms of Use" , link: "#" },
-  		{name: "Copyright" , link: "#" },
   		{name: "Contact Us" , link: "#" },
-  		{name: "Corrections" , link: "#" },
   		{name: "Site Index" , link: "#" }
   	],
 

@@ -53,16 +53,10 @@
 	font-stretch: normal;
 }
 
-@orangeFont:#ff8000;
-@smallTextFontColor:#999999;
-
-.font-nav{
+@mixin founders( $size: 18px, $color : #333333 ){
 	font-family: "FoundersGrotCond-Semibold";
-	// font-style: normal;
-	// font-weight: 500;
-	// font-stretch: normal;
-	font-size:18px;
-	color:#333333;
+	font-size: $size;
+	color: $color;
 	text-transform: uppercase;
 }
 
@@ -71,7 +65,7 @@
 }
 
 h1, h2 {
-	color:#444444;
+	color: #444444;
 	font-family: "FoundersGrotCond-Semibold", sans-serif;
 	text-transform: none;
 	font-style: normal;
@@ -80,18 +74,17 @@ h1, h2 {
 }
 
 h1{
-	//font-size:3.2em;
-	font-size:4.2em;
+	font-size: 40px;
 }
 
 h2 {
-	font-size: 2.6em;
-	margin-bottom: .4em;
+	font-size: 32px;
+	margin-bottom: 5px;
 }
 
 h3 {
-	color:#cccccc;
-	font-size: 1.75em;
+	color: #cccccc;
+	font-size: 24px;
 	font-family: "FoundersGrotCond-Semibold", sans-serif;
 	text-transform: none;
 	font-style: normal;
@@ -103,15 +96,19 @@ h3 {
 p {
   color: #9f9f9f;
   font-family: arial,sans-serif;
-  font-size: 1.1em;
-  line-height: 1.9em;
+  font-size: 18px;
+  line-height: 1.5;
   margin: auto;
   position: relative;
 }
-
 
 .arialfont{
 	font-family: arial,sans-serif;
 }
 
+.blocked {
+	background: $magenta;
+	color: #fff;
+	padding: 10px;
+}
 

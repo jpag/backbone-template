@@ -7,8 +7,12 @@ lib/underscore-min.js
 wrapper/underscore.wrapper.js
 lib/backbone-min.js
 wrapper/backbone.wrapper.js
-configs/footer.js
+configs/contentExample.js
 lib/text.js
+text!templates/contentExample.html
+views/contentExample.js
+composites/SiteComposite.js
+configs/footer.js
 text!templates/footerCompositeTemplate.html
 composites/FooterComposite.js
 Router.js

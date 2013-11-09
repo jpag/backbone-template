@@ -3,16 +3,14 @@ define([
     'Underscore',
     'Backbone',
     //'composites/HeaderComposite',
-    //'composites/SiteComposite',
-    //'composites/BottomComposite',
+    'composites/SiteComposite',
     'composites/FooterComposite'
 ], function(
     $,
     _,
     Backbone,
     // HeaderComposite,
-    // SiteComposite,
-    // BottomComposite,
+    SiteComposite,
     FooterComposite
 ) {
 
@@ -59,6 +57,11 @@ define([
                 el : $('#footer-composite'),
                 EventAggregator: this.EventAggregator
             });
+
+            this.siteComposite = new SiteComposite({
+                el : $("#site-composite"),
+                EventAggregator: this.EventAggregator
+            });
             
             $("#siteloader")
                 .delay(100)
@@ -76,7 +79,7 @@ define([
         },
 
         revealAll : function (){
-            $("#master-wrapper").fadeIn();
+            $("#site-composite").fadeIn();
             $("#siteloader-wrapper").remove();
         },
 
