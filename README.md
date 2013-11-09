@@ -2,7 +2,8 @@
 
 Here is the readme with the info:
 
-LESS css
+SASS css
+
 Backbone js framework make sure to build the site before deploying.. with the build script.
 
 ## Build Process
