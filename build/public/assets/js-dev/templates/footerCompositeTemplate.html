@@ -1,15 +1,15 @@
 <div class="wrapper">
     <div>
         <ul>
-            <% _.each(links, function(obj, i) { %>
-                <li><a href=<%= obj.link %> target="_blank" ><%= obj.name %></a></li>
-            <% }); %>
+            {{#each links}}
+                <li><a href={{link}} target="_blank" >{{name}}</a></li>
+            {{/each}}
 
             <li id="follow-us" class="last-child" >
                 <span class="followUs">Follow Us</span>
-                <% _.each(followBtns, function(obj, i) { %>
-                    <a href=<%= obj.link %> class="socialBtn <%- obj.classname %>" target="_blank"></a>
-                <% }); %>
+                {{#each followBtns}}
+                    <a href="{{link}}" class="socialBtn {{classname}}" target="_blank"></a>
+                {{/each}}
             </li>
         </ul>
     </div>

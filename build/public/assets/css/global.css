@@ -765,6 +765,10 @@ p {
   background-color: rgba(202, 31, 123, 0.2);
 }
 
+#grid-overlay.active {
+  display: block;
+}
+
 body {
   width: 100%;
   height: 100%;

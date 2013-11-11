@@ -1,17 +1,19 @@
 define([
-    "jQuery",
-    "Underscore",
-    "Backbone",
-    "configs/footer",
-    "text!templates/footerCompositeTemplate.html"
+    'jQuery',
+    'Underscore',
+    'Backbone',
+    'Handlebars',
+    'configs/footer',
+    'text!templates/footerCompositeTemplate.html'
 ], function(
     $,
     _,
     Backbone,
+    Handlebars,
     Config,
     CompositeTemplate
 ) {
-    "use strict";
+    'use strict';
 
     return Backbone.View.extend({
 
@@ -24,18 +26,18 @@ define([
 
         initialize : function () {
             //_.bindAll(this);
-
             this.render();
         },
 
-        /* build content/templates */
         render : function () {
-            //create
             Debug.trace( ' ---- render footer template ---- ' );
-            Debug.trace( Config );
-            var createdTemplate = _.template(CompositeTemplate, Config);
-            //this BREAKS IE8..
-            this.$el.append(createdTemplate);
+            
+            // underscore templating:
+            // var createdTemplate = _.template(CompositeTemplate, Config);
+            
+            var template = Handlebars.compile(CompositeTemplate);
+            var templateRender = template(Config);
+            this.$el.append(templateRender);
 
             return this;
         },
@@ -45,12 +47,12 @@ define([
             if( this.followClicked == false ){
                 this.followClicked = true;
 
-                this.$el.find(".followUs").remove();
-                this.$el.find(".socialBtn").css({
-                    "display":"inline-block"
+                this.$el.find('.followUs').remove();
+                this.$el.find('.socialBtn').css({
+                    'display':'inline-block'
                 })
 
-                gaTrackEvent("footer","follow-us-open","");
+                gaTrackEvent('footer','follow-us-open','');
 
             }
         }

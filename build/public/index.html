@@ -46,27 +46,9 @@
 </head>
 
 <body>
-    <!-- GRID OVERLAY -->
-    <div class="full-box" id="grid-overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-                <div class="col span-1"></div>
-            </div>
-        </div>
-    </div>
-
+    
     <div id="master-wrapper">
+
         <div id="siteloader-wrapper">
             <div id="siteloader">
                 <img src="assets/images/ui/loader_eee.gif" width="35" height="35" alt="" />
@@ -79,8 +61,6 @@
     <!-- footer legal-->
     <div id="footer-composite" role="contentinfo">
     </div>
-
-
 
 
     <!-- Scripts -->
@@ -100,7 +80,8 @@
                     if( !window.Debug || (global.getIE() != -1) ){
                         //NOT IN DEBUG MODE if it is IE 'Debug' is a component of IE
                         //define a blank function to handle all traces:
-                        window.Debug = new function(){return{trace:function(str){}}};
+                        window.Debug = new function(){return{active:false,trace:function(str){}}};
+                        // window.trace = function(str){};
                     }else{
                         Debug.init();
                     };

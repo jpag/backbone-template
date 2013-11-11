@@ -4,6 +4,8 @@ var Debug = new function(){
 
 	return {
 
+		active: true,
+
 		init:function(){
 			//is this needed?
 			d = this;

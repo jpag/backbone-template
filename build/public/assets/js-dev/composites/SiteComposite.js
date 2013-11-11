@@ -23,11 +23,14 @@ define([
 
         initialize : function () {
 
-            _.bindAll(this);
-
-            _.defaults(this.options, {
-                EventAggregator : _.extend({}, Backbone.Events)
-            });
+            Debug.trace( this.options );
+            
+            if( !this.options ){
+                this.options = {};
+            }
+                _.defaults(this.options, {
+                    EventAggregator : _.extend({}, Backbone.Events)
+                });
 
             // Extend our object with additional properties.
             _.extend(this, {

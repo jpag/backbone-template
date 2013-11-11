@@ -2,14 +2,12 @@ define([
     'jQuery',
     'Underscore',
     'Backbone',
-    //'composites/HeaderComposite',
     'composites/SiteComposite',
     'composites/FooterComposite'
 ], function(
     $,
     _,
     Backbone,
-    // HeaderComposite,
     SiteComposite,
     FooterComposite
 ) {
@@ -21,7 +19,7 @@ define([
         EventAggregator:null,
         
         initialize : function(params){
-            _.bindAll(this);
+            // _.bindAll(this);
 
             params = params || {};
 
@@ -36,14 +34,15 @@ define([
             this.route(/^$/, 'home', this.home);
 
             $(this.windowObject).bind({
-                "resize" : this.resize,
-                "mousewheel" : this.scroll,
-                "scroll" : this.scroll,
+                "resize"    : this.resize,
+                "mousewheel": this.scroll,
+                "scroll"    : this.scroll,
                 "touchmove" : this.scroll
             });
 
             //create EVENT manager 'vent'
             //http://lostechies.com/derickbailey/2011/07/19/references-routing-and-the-event-aggregator-coordinating-views-in-backbone-js/
+            Debug.trace( Backbone.Events );
             this.EventAggregator = _.extend({}, Backbone.Events);
             //this.EventAggregator.bind("render:resize", this.resize );
             //this.EventAggregator.bind("window:Scroll", this.scrollEvent );
@@ -62,7 +61,10 @@ define([
                 el : $("#site-composite"),
                 EventAggregator: this.EventAggregator
             });
-            
+
+
+            this.insertGridView();
+
             $("#siteloader")
                 .delay(100)
                 .animate({
@@ -76,6 +78,21 @@ define([
                     complete: this.revealAll
                     //easing:'easeInBounce'
                 });
+        },
+
+        insertGridView : function () {
+            // First determine if you are in debug mode: 
+            if( Debug.active == true ){
+                require([
+                    'views/gridOverlay'
+                ], function( 
+                    GridOverlay
+                    ){
+
+                    new GridOverlay();
+                    
+                });
+            }
         },
 
         revealAll : function (){

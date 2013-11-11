@@ -17,7 +17,7 @@ define([
     return Backbone.View.extend({
 
         initialize : function () {
-            _.bindAll(this);
+            // _.bindAll(this);
             this.render();
         },
 

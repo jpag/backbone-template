@@ -27,7 +27,7 @@ define([
 
         initialize : function () {
 
-            _.bindAll(this);
+            // _.bindAll(this);
 
             _.defaults(this.options, {
                 EventAggregator : _.extend({}, Backbone.Events)

@@ -196,3 +196,6 @@ $gridWidthMedium: ($colWidthMedium * $numberOfCols) + ($gutterWidthMedium * $num
 		}
 	}
 }
+#grid-overlay.active {
+	display: block;
+}
