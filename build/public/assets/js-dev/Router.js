@@ -18,8 +18,10 @@ define([
 
         EventAggregator:null,
         
+        throttleDelay: 200,
+
         initialize : function(params){
-            // _.bindAll(this);
+            // _.bindAll(this, 'resize','mousewheel','scroll','touchmove');
 
             params = params || {};
 
@@ -34,10 +36,10 @@ define([
             this.route(/^$/, 'home', this.home);
 
             $(this.windowObject).bind({
-                "resize"    : this.resize,
-                "mousewheel": this.scroll,
-                "scroll"    : this.scroll,
-                "touchmove" : this.scroll
+                "resize"    : _.bind( _.throttle(this.resize,this.throttleDelay), this),
+                "mousewheel": _.bind(this.scroll,this),
+                "scroll"    : _.bind(this.scroll,this),
+                "touchmove" : _.bind(this.scroll,this)
             });
 
             //create EVENT manager 'vent'
@@ -106,7 +108,7 @@ define([
 
         //EVENTS:
         scroll : function(event, delta ){
-            //Debug.trace( ' scroll! ');
+            Debug.trace( ' scroll! ');
             this.EventAggregator.trigger('window:Scroll' , {event:event, delta:delta} )
         },
 
