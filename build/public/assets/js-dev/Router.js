@@ -44,11 +44,12 @@ define([
 
             //create EVENT manager 'vent'
             //http://lostechies.com/derickbailey/2011/07/19/references-routing-and-the-event-aggregator-coordinating-views-in-backbone-js/
-            Debug.trace( Backbone.Events );
             this.EventAggregator = _.extend({}, Backbone.Events);
+            
+            // in views:
             //this.EventAggregator.bind("render:resize", this.resize );
             //this.EventAggregator.bind("window:Scroll", this.scrollEvent );
-            //Debug.trace("ROUTER");
+            
             this.home();
         },
 
@@ -106,7 +107,7 @@ define([
             this.initializeComposites();
         },
 
-        //EVENTS:
+        // --- EVENTS to dispatch throughout:
         scroll : function(event, delta ){
             Debug.trace( ' scroll! ');
             this.EventAggregator.trigger('window:Scroll' , {event:event, delta:delta} )

@@ -42,7 +42,7 @@ define([
             return this;
         },
 
-        followUs: function (ev) {
+        followUs: function (e) {
             Debug.trace('footer follow us clicked');
             if( this.followClicked == false ){
                 this.followClicked = true;
@@ -56,6 +56,5 @@ define([
 
             }
         }
-
     });
 });

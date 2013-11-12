@@ -1,5 +1,4 @@
 define([
-    //'lib/jquery-1.7.2.min',
     'lib/jquery-1.10.2.min',
     'lib/underscore-min',
     'lib/backbone-min.1.1.0'
